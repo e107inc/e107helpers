@@ -26,13 +26,13 @@ if (file_exists(e_PLUGIN."e107helpers/languages/".e_LANGUAGE.".php")) {
 }
 require_once(e_PLUGIN."e107helpers/e107Helper_constants.php");
 
-$eplug_name          = HELPER_TITLE;                           // Name of the plugin, as displayed in Plugin Manager
-$eplug_version       = HELPER_VER;                             // Plugin version number
+$eplug_name          = defset('HELPER_TITLE');                           // Name of the plugin, as displayed in Plugin Manager
+$eplug_version       = defset('HELPER_VER');                             // Plugin version number
 $eplug_author        = "bugrain";                              // What you want to be know as with respect to authoring this plugin
 $eplug_logo          = "button.png";                           // ????
 $eplug_url           = "http://www.bugrain.plus.com";          // Your website, will have a link in plugin manager
 $eplug_email         = "bugrain@bugrain.plus.com";             // Your e-mail address, will have a mailto link in plugin manager
-$eplug_description   = HELPER_LAN_02;                          // A short and meaningful description for your plugin, will be displayed in plugin manager
+$eplug_description   = defset('HELPER_LAN_02');                          // A short and meaningful description for your plugin, will be displayed in plugin manager
 $eplug_compatible    = "e107v0.7";                             // Which version of e107 is ithis plugin compatible with, examples are e107v0.617, e107v0.617+, e107v0.7
 $eplug_readme        = "admin_readme.php";                     // The name of an overview file (normally admin_readme.php), will have a link in plugin manager
 $eplug_compliant     = false;                                  // Is this plugin W3C XHTML compliant, if not or you ar not sure, set to false (see XXXXXXXXX to check compatibility)
@@ -45,12 +45,12 @@ $eplug_caption       = "Configure e107 Helper";                // ????
 $eplug_link          = false;                                  // Creates a link in the standard e107 menu (i.e. sitelink) when true
 $eplug_link_name     = "";                                     // Text for the site link (above) if created
 $eplug_link_url      = "";                                     // Relative URL to the main plugin page for the site link (above) if created
-$eplug_done          = HELPER_LAN_06;                          // Text to display after plugin successfully installed
-$eplug_upgrade_done  = HELPER_LAN_07;                          // Text to display after plugin successfully upgraded
+$eplug_done          = defset('HELPER_LAN_06');                          // Text to display after plugin successfully installed
+$eplug_upgrade_done  = defset('HELPER_LAN_07');                          // Text to display after plugin successfully upgraded
 
 // Array of preferences for this plugin, with default values. These will be used when the plugin is installed for the first time
 $eplug_prefs = array(
-   "helper_logger_level"         => HELPER_LOGGER_OFF,
+   "helper_logger_level"         => defset('HELPER_LOGGER_OFF'),
    "helper_debug"                => "",
    "helper_style_label_class"    => "forumheader3",
    "helper_style_prompt_class"   => "smalltext",
@@ -77,4 +77,3 @@ $upgrade_remove_prefs = array();
 
 // SQL statements to be executed when the plugin is upgraded
 $upgrade_alter_tables = array();
-?>
